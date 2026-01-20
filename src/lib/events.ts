@@ -14,6 +14,7 @@ export type EventItem = {
   source?: string;
   link_url?: string;
   link_text?: string;
+  details?: string;
 };
 
 export function loadEvents(): EventItem[] {
