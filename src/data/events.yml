@@ -1,13 +1,4 @@
 events:
-  - id: 202504
-    title: Da Vinchi Protocol
-    date: 2026-03-25
-    time: 18:30 CET
-    location: Akasha Hub Barcelona
-    type: Meetup
-    link_url: https://luma.com/ethereumbcn
-    link_text: Register now
-    details: "Watch the [session recording](https://example.com/video) or review the deck at https://example.com/slides."
   - id: E001
     title: February Meetup
     date: 2024-02-15
