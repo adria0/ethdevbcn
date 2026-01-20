@@ -1,11 +1,225 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { loadEvents } from "../lib/events";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const allEvents = loadEvents();
+const today = new Date();
+today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate date comparison
+
+const nextEvents = allEvents.filter((e) => new Date(e.date) >= today);
+const previousEvents = allEvents.filter((e) => new Date(e.date) < today);
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Events</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap"
+        />
+        <style>
+            body {
+                font-family: "Orbitron", system-ui, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: black;
+                color: white;
+            }
+            .header-wrapper {
+                background-color: black;
+                width: 100%;
+            }
+            .header-image {
+                width: 50%;
+                height: auto;
+                display: block;
+                margin: 0 auto;
+            }
+            .content {
+                padding: 24px;
+            }
+            header {
+                display: flex;
+                gap: 12px;
+                align-items: baseline;
+                flex-wrap: wrap;
+            }
+            section {
+                margin-top: 32px;
+            }
+            h1,
+            h2 {
+                font-family: "Orbitron", system-ui, sans-serif;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+            }
+            h2 {
+                margin: 16px 0;
+                font-size: 1.5rem;
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 16px;
+                margin-top: 16px;
+            }
+            .card {
+                border: 1px solid #444;
+                border-radius: 12px;
+                padding: 14px 14px 12px;
+                background-color: #1a1a1a;
+            }
+            .meta {
+                opacity: 0.8;
+                font-size: 0.95rem;
+                margin: 6px 0 10px;
+            }
+            .title {
+                font-weight: 650;
+                font-size: 1.05rem;
+                margin: 0;
+            }
+            a {
+                text-decoration: none;
+                color: #4da6ff;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .pill {
+                display: inline-block;
+                padding: 2px 8px;
+                border-radius: 999px;
+                border: 1px solid #444;
+                font-size: 0.8rem;
+                opacity: 0.9;
+            }
+            .event-link {
+                display: inline-block;
+                margin-top: 12px;
+                color: #ffd166;
+                font-weight: 600;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <img src="/images/header.jpeg" alt="Header" class="header-image" />
+        </div>
+        <div class="content">
+            <header>
+                <h1 style="margin:0;">Events</h1>
+                <span class="pill">{allEvents.length} total</span>
+            </header>
+
+            {
+                nextEvents.length > 0 && (
+                    <section>
+                        <h2>Next Events</h2>
+                        <div class="grid">
+                            {nextEvents.map((e) => (
+                                <div class="card">
+                                    <p class="title">
+                                        {e.url ? (
+                                            <a
+                                                href={e.url}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                {e.title}
+                                            </a>
+                                        ) : (
+                                            e.title
+                                        )}
+                                    </p>
+                                    <div class="meta">
+                                        <div>
+                                            {e.date}
+                                            {e.time ? ` · ${e.time}` : ""}
+                                            {e.timezone
+                                                ? ` (${e.timezone})`
+                                                : ""}
+                                        </div>
+                                        <div>
+                                            {[e.venue, e.city, e.country]
+                                                .filter(Boolean)
+                                                .join(" · ")}
+                                        </div>
+                                    </div>
+                                    {e.source ? (
+                                        <div class="pill">{e.source}</div>
+                                    ) : null}
+                                    {e.link_url ? (
+                                        <a
+                                            class="event-link"
+                                            href={e.link_url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {e.link_text ?? "Event link"}
+                                        </a>
+                                    ) : null}
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )
+            }
+
+            {
+                previousEvents.length > 0 && (
+                    <section>
+                        <h2>Previous Events</h2>
+                        <div class="grid">
+                            {previousEvents.map((e) => (
+                                <div class="card">
+                                    <p class="title">
+                                        {e.url ? (
+                                            <a
+                                                href={e.url}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                {e.title}
+                                            </a>
+                                        ) : (
+                                            e.title
+                                        )}
+                                    </p>
+                                    <div class="meta">
+                                        <div>
+                                            {e.date}
+                                            {e.time ? ` · ${e.time}` : ""}
+                                            {e.timezone
+                                                ? ` (${e.timezone})`
+                                                : ""}
+                                        </div>
+                                        <div>
+                                            {[e.venue, e.city, e.country]
+                                                .filter(Boolean)
+                                                .join(" · ")}
+                                        </div>
+                                    </div>
+                                    {e.source ? (
+                                        <div class="pill">{e.source}</div>
+                                    ) : null}
+                                    {e.link_url ? (
+                                        <a
+                                            class="event-link"
+                                            href={e.link_url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {e.link_text ?? "Event link"}
+                                        </a>
+                                    ) : null}
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                )
+            }
+        </div>
+    </body>
+</html>
