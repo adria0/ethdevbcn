@@ -5,8 +5,27 @@ const allEvents = loadEvents();
 const today = new Date();
 today.setHours(0, 0, 0, 0); // Reset time to midnight for accurate date comparison
 
-const nextEvents = allEvents.filter((e) => new Date(e.date) >= today);
-const previousEvents = allEvents.filter((e) => new Date(e.date) < today);
+const isTba = (date) => {
+    if (!date) return false;
+    const s = String(date).trim().toLowerCase();
+    return (
+        s === "tba" || s === "t.b.a" || s === "tbd" || s === "to be announced"
+    );
+};
+
+const nextEvents = allEvents.filter((e) => {
+    // Treat explicit "TBA"/"TBD" (and similar) as upcoming
+    if (isTba(e.date)) return true;
+    const d = new Date(e.date);
+    return !Number.isNaN(d.getTime()) && d >= today;
+});
+
+const previousEvents = allEvents.filter((e) => {
+    // Exclude "TBA"/"TBD" from previous events
+    if (isTba(e.date)) return false;
+    const d = new Date(e.date);
+    return !Number.isNaN(d.getTime()) && d < today;
+});
 
 const linkifyDetails = (value: string) =>
     value
@@ -48,6 +67,7 @@ const linkifyDetails = (value: string) =>
         <style>
             body {
                 font-family: "Kode Mono", system-ui, sans-serif;
+                font-size: 130%;
                 margin: 0;
                 padding: 0;
                 background-color: black;
@@ -97,6 +117,17 @@ const linkifyDetails = (value: string) =>
                 border-radius: 12px;
                 padding: 14px 14px 12px;
                 background-color: #1a1a1a;
+            }
+            .card.next {
+                /* More vivid green background for upcoming events */
+                background: linear-gradient(
+                    180deg,
+                    rgba(16, 90, 44, 0.96),
+                    rgba(8, 40, 18, 0.96)
+                );
+                border-color: #39d98a;
+                box-shadow: 0 8px 30px rgba(57, 217, 138, 0.18);
+                border-left: 4px solid #39d98a;
             }
             .meta {
                 font-family: "Kode Mono", system-ui, sans-serif;
@@ -168,7 +199,7 @@ const linkifyDetails = (value: string) =>
                         <h2>Next Events</h2>
                         <div class="grid">
                             {nextEvents.map((e) => (
-                                <div class="card">
+                                <div class="card next">
                                     <p class="title">
                                         {e.url ? (
                                             <a

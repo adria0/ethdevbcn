@@ -1,4 +1,8 @@
 events:
+  - title: Davinci voting
+    date: TBA
+    time: TBA
+    details: "[Davinci](https://davinci.vote/) is the newest decentralized voting protocol by Vocdoni"
   - title: February Meetup
     date: 2024-02-15
     time: 18:30 CET
@@ -55,13 +59,20 @@ events:
     date: 2018-08-21
     time: 17:00 CEST
     venue: AKASHA Hub Barcelona
+    details: Amir Taaki
   - title: Monthly Ethereum Developers Meeting
     date: 2018-07-16
     time: 19:00 CEST
     details: "[DappNode](https://dappnode.io) by [Edu](https://x.com/eduadiez)"
+    venue: Depot Lab
+  - title: Aragon Project and HorizonState
+    date: 2018-05-09
+    time: 06:30 CEST
+    details: "[Aragon Project](https://aragon.org) by [Bingen Eguzkitza](https://twitter.com/bingentxu) and [HorizonState](https://horizonstate.com) by [Nimo](https://twitter.com/nimo_ni)"
   - title: Circles, Universal Basic Income on the Blockchain
     date: 2018-04-16
     time: 19:15 CEST
+    details: "[Andy Milenius](https://twitter.com/RealZandy)"
   - title: 5th ethereum µtraining workshop rustfest edition
     date: 2018-02-22
     time: 18:00 CET
@@ -69,6 +80,7 @@ events:
   - title: Monthly Ethereum Developers Meeting
     date: 2018-02-21
     time: 18:00 CET
+    details: ERC777 by [Jordi Baylina](https://twitter.com/jbaylina). Ticket selling system by Marc Baque, Marc Méndez and Jordi Estapé.
   - title: Monthly Ethereum Meetup
     date: 2017-11-23
     time: 19:00 CEST
