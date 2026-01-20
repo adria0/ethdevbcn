@@ -5,8 +5,9 @@ on:
     branches:
       - main
 
+# IMPORTANT: Give GITHUB_TOKEN write access so the action can push to gh-pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -32,10 +33,7 @@ jobs:
       - name: Deploy to GitHub Pages (gh-pages)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # Branch the action will push to (change if you want a different branch)
           branch: gh-pages
-          # Folder to deploy (Astro default is `dist`)
           folder: dist
-          # Optional: commit message
           commit-message: "Deploy site: ${{ github.sha }}"
           token: ${{ secrets.GITHUB_TOKEN }}
