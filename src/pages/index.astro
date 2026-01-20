@@ -18,23 +18,75 @@ const previousEvents = allEvents.filter((e) => new Date(e.date) < today);
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap"
         />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap"
+        />
         <style>
             body {
-                font-family: "Orbitron", system-ui, sans-serif;
+                font-family: "Kode Mono", system-ui, sans-serif;
                 margin: 0;
                 padding: 0;
                 background-color: black;
                 color: white;
             }
             .header-wrapper {
-                background-color: black;
+                position: relative;
                 width: 100%;
+                padding: 36px 0 18px;
+                background: radial-gradient(
+                    120% 140% at 50% 20%,
+                    rgba(84, 32, 126, 0.3),
+                    rgba(0, 0, 0, 0.95)
+                );
+                overflow: hidden;
             }
             .header-image {
+                position: relative;
+                z-index: 1;
                 width: 50%;
+                max-width: 540px;
                 height: auto;
                 display: block;
                 margin: 0 auto;
+                border-radius: 18px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                box-shadow: 0 28px 60px -32px rgba(120, 82, 255, 0.55);
+            }
+            .header-wrapper::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: repeating-linear-gradient(
+                    to bottom,
+                    rgba(255, 255, 255, 0.08) 0px,
+                    rgba(255, 255, 255, 0.08) 1px,
+                    transparent 1px,
+                    transparent 4px
+                );
+                opacity: 0.12;
+                pointer-events: none;
+                animation: header-scan 6s linear infinite;
+                will-change: background-position;
+            }
+            .header-wrapper::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0.85) 100%
+                );
+                pointer-events: none;
+            }
+            @keyframes header-scan {
+                from {
+                    background-position-y: 0;
+                }
+                to {
+                    background-position-y: 160px;
+                }
             }
             .content {
                 padding: 24px;
@@ -71,11 +123,13 @@ const previousEvents = allEvents.filter((e) => new Date(e.date) < today);
                 background-color: #1a1a1a;
             }
             .meta {
+                font-family: "Kode Mono", system-ui, sans-serif;
                 opacity: 0.8;
                 font-size: 0.95rem;
                 margin: 6px 0 10px;
             }
             .title {
+                font-family: "Kode Mono", system-ui, sans-serif;
                 font-weight: 650;
                 font-size: 1.05rem;
                 margin: 0;
@@ -100,6 +154,7 @@ const previousEvents = allEvents.filter((e) => new Date(e.date) < today);
                 margin-top: 12px;
                 color: #ffd166;
                 font-weight: 600;
+                font-family: "Kode Mono", system-ui, sans-serif;
             }
         </style>
     </head>
