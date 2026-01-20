@@ -2,133 +2,109 @@ events:
   - title: February Meetup
     date: 2024-02-15
     time: 18:30 CET
-    location: Barcelona, ES
     details: Discovering the Polygon CDK [Victor Castell](https://x.com/vcastellm). Security Analisys of L1 and L2 Extensions [Adrià Torralba-Agell](https://x.com/0xAdriaTorralba). Contract Surgeries [Sem](https://x.com/sembrestels)
   - title: "Formaci\xF3 programaci\xF3 SNARKS"
     date: 2023-06-13
     time: 09:00 CEST
-    location: Barcelona, ES
+    venue: Betahaus Barcelona
   - title: "Ethereum Developers \u2013 November Meetup"
     date: 2022-11-18
     time: 18:30 CET
-    location: Barcelona, ES
     venue: AKASHA Hub Barcelona
     details: BatRaVote [Artem Grigor](https://github.com/ElusAegis). Blind-OVOTE [Arnau Cube](https://x.com/arnaucube). The EF zkEVM toolkit [Adrià Massanet](https://x.com/adria0).
   - title: Com es programen els diners
     date: 2022-03-16
     time: 17:00 CET
-    location: Barcelona, ES
   - title: zkRollups + NFTs + Halo2
     date: 2022-03-03
     time: 19:00 CET
-    location: Barcelona, ES
     venue: AKASHA Hub Barcelona
   - title: Dark.fi + NYM
     date: 2021-12-09
     time: 19:00 CET
-    location: Barcelona, ES
     venue: AKASHA Hub Barcelona
   - title: 7th ethereum µtraining workshop DeFi edition
     date: 2021-12-01
     time: 10:30 CET
-    location: Barcelona, ES
     details: Create an Uniswap from scratch.
+    venue: Betahaus Barcelona
   - title: 7th ethµtraining solarpunk edition
     date: 2020-09-10
     time: 18:00 CEST
-    location: Barcelona, ES
+    venue: AKASHA Hub Barcelona
   - title: Vocdoni + ZK RollUp
     date: 2020-01-16
     time: 19:00 CET
-    location: Barcelona, ES
+    venue: AKASHA Hub Barcelona
   - title: Gnosis Sight + Underscore protocol
     date: 2019-11-20
     time: 19:00 CET
-    location: Barcelona, ES
     venue: AKASHA Hub Barcelona
   - title: 6th ethereum µtraining workshop rustfest edition
     date: 2019-11-06
     time: 18:00 CET
-    location: Barcelona, ES
   - title: Confidential Smart Contracts + Decentralized Sovereignty
     date: 2019-07-30
     time: 19:00 CEST
-    location: Barcelona, ES
+    venue: AKASHA Hub Barcelona
   - title: skale + snarkjs + tesseracts
     date: 2019-03-19
     time: 18:45 CET
-    location: Barcelona, ES
+    venue: AKASHA Hub Barcelona
   - title: Monthly Ethereum Developers Meeting
     date: 2018-08-21
     time: 17:00 CEST
-    location: Barcelona, ES
-    deprecated: true
+    venue: AKASHA Hub Barcelona
   - title: Monthly Ethereum Developers Meeting
     date: 2018-07-16
     time: 19:00 CEST
-    location: Barcelona, ES
     details: "[DappNode](https://dappnode.io) by [Edu](https://x.com/eduadiez)"
   - title: Circles, Universal Basic Income on the Blockchain
     date: 2018-04-16
     time: 19:15 CEST
-    location: Barcelona, ES
   - title: 5th ethereum µtraining workshop rustfest edition
     date: 2018-02-22
     time: 18:00 CET
-    location: Barcelona, ES
-
+    venue: Betahaus Barcelona
   - title: Monthly Ethereum Developers Meeting
     date: 2018-02-21
     time: 18:00 CET
-    location: Barcelona, ES
-
   - title: Monthly Ethereum Meetup
     date: 2017-11-23
     time: 19:00 CEST
-    location: Barcelona, ES
-
   - title: 4th ethereum µtraining workshop
     date: 2017-10-17
     time: 18:00 CET
-    location: Barcelona, ES
-
+    venue: Betahaus Barcelona
   - title: Monthly Ethereum Meetup (Social)
     date: 2017-10-09
     time: 18:00 CET
-    location: Barcelona, ES
-
   - title: Monthly Ethereum Meetup
     date: 2017-09-20
     time: 18:30 CET
-    location: Barcelona, ES
-
   - title: 3th ethereum µtraining workshop
     date: 2017-07-18
     time: 19:00 CET
-    location: Barcelona, ES
-
+    venue: Betahaus Barcelona
   - title: 3th ethereum µtraining workshop
     date: 2017-06-06
     time: 19:00 CET
-    location: Barcelona, ES
-
+    venue: Betahaus Barcelona
   - title: 2nd ethereum µtraining workshop
     date: 2017-04-18
     time: 19:00 CEST
-    location: Barcelona, ES
+    venue: Betahaus Barcelona
   - title: Monthly Ethereum Meetup (Social)
     date: 2017-04-04
     time: 19:00 CEST
-    location: Barcelona, ES
   - title: "Monthly Ethereum Meetup \u2013 EDCON & Projects"
     date: 2017-03-08
     time: 19:00 CET
-    location: Barcelona, ES
+    venue: UPC Barcelona
   - title: Ethereum µTraining Workshop
     date: 2017-02-22
     time: 19:00 CET
-    location: Barcelona, ES
+    venue: Betahaus Barcelona
   - title: "January Ethereum Meetup \u2013 kick off with beers"
     date: 2017-01-19
     time: 19:00 CET
-    location: Barcelona, ES
